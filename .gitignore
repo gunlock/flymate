@@ -1,0 +1,15 @@
+build/
+tmp/
+compile_commands.json
+CMakeUserPresets.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

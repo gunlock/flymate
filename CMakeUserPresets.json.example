@@ -1,0 +1,29 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "dev",
+      "displayName": "Development",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/host",
+      "cacheVariables": {
+        "XPLANE_PLUGIN_DIR": "/path/to/X-Plane 12/Resources/plugins"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "build:linux",   "configurePreset": "dev", "targets": ["build-linux"] },
+    { "name": "build:windows", "configurePreset": "dev", "targets": ["build-windows"] },
+    { "name": "build:macos",   "configurePreset": "dev", "targets": ["build-macos"] },
+    { "name": "build:all",     "configurePreset": "dev", "targets": ["build-all"] },
+    { "name": "deploy",        "configurePreset": "dev", "targets": ["deploy"] },
+    { "name": "install",       "configurePreset": "dev", "targets": ["install-plugin"] },
+    { "name": "docker:rebuild", "configurePreset": "dev", "targets": ["docker-rebuild"] },
+    { "name": "docker:clean",   "configurePreset": "dev", "targets": ["docker-clean-image"] }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "linux",
+      "displayName": "Linux x86_64 (Zig)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/linux",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/zig-linux-x64.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "windows",
+      "displayName": "Windows x86_64 (Zig)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/windows",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/zig-windows-x64.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "mac-x64",
+      "displayName": "macOS x64 (Zig)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/mac-x64",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/zig-macos-x64.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "mac-arm64",
+      "displayName": "macOS ARM64 (Zig)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/mac-arm64",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/zig-macos-arm64.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux",
+      "configurePreset": "linux"
+    },
+    {
+      "name": "windows",
+      "configurePreset": "windows"
+    },
+    {
+      "name": "mac-x64",
+      "configurePreset": "mac-x64"
+    },
+    {
+      "name": "mac-arm64",
+      "configurePreset": "mac-arm64"
+    }
+  ]
+}
